@@ -55,6 +55,12 @@ public class MorseDecoder {
         for (int binIndex = 0; binIndex < totalBinCount; binIndex++) {
             // Get the right number of samples from the inputFile
             // Sum all the samples together and store them in the returnBuffer
+           inputFile.readFrames(sampleBuffer, BIN_SIZE);
+           double sum = 0;
+           for (int i=0; i <sampleBuffer.length; i++) {
+                sum = sum + sampleBuffer[i];
+            }
+
         }
         return returnBuffer;
     }
@@ -86,6 +92,10 @@ public class MorseDecoder {
         // else if ispower and not waspower
         // else if issilence and wassilence
         // else if issilence and not wassilence
+
+        for (int i = 0; i < binIndex; i++) {
+
+        }
 
         return "";
     }
